@@ -2,17 +2,16 @@ package com.masai.models;
 
 import java.util.List;
 
-import jakarta.persistence.CascadeType;
-import jakarta.persistence.Entity;
-import jakarta.persistence.FetchType;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.ManyToMany;
-import jakarta.persistence.ManyToOne;
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
 
 @Entity
 @Data
@@ -21,16 +20,15 @@ import lombok.NoArgsConstructor;
 public class Item {
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer itemId;
 	private String itemName;
 	private Integer quantity;
 	private Double cost;
 	
-	@ManyToOne(targetEntity = Category.class,cascade = CascadeType.ALL)
+	@ManyToOne(cascade = CascadeType.ALL)
 	private Category category;
 	
-	@ManyToMany(targetEntity =Restaurant.class,fetch = FetchType.EAGER ,cascade = CascadeType.ALL)
+	@ManyToMany(cascade = CascadeType.ALL)
 	private List<Restaurant> restaurants;
 	
 

@@ -1,12 +1,15 @@
-package com.masai.repositorys;
+package com.masai.repository;
+
 
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
 
 import com.masai.models.Customer;
 
 public interface CustomerRepository extends JpaRepository<Customer,Integer> {
-	
-	//using this first we check the customer is register or not;
-	public Customer findByMobileNumber(String mobileNumber);
 
+	public Customer findByMobileNumber(String mobileNumber);
+	
+
+	
 }

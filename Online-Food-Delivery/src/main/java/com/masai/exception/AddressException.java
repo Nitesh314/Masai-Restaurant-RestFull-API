@@ -1,4 +1,4 @@
-package com.masai.exceptions;
+package com.masai.exception;
 
 public class AddressException extends Exception {
 	

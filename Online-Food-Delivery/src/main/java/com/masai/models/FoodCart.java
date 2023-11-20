@@ -1,32 +1,29 @@
 package com.masai.models;
 
-import jakarta.persistence.CascadeType;
+import java.util.List;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.FetchType;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
-import jakarta.persistence.OneToOne;
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import java.util.List;
+
 @Entity
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 public class FoodCart {
-    
+	
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer cartId;
-	
-	@OneToOne(targetEntity =Customer.class,fetch = FetchType.EAGER ,cascade = CascadeType.ALL)
+	@OneToOne(fetch = FetchType.EAGER ,cascade = CascadeType.ALL)
 	private Customer customer;
-	
-	@OneToMany(targetEntity = Item.class,fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-	private List<Item>itemList;
-	
+	@OneToMany(fetch = FetchType.EAGER ,cascade = CascadeType.ALL)
+	private List<Item> itemList;
+
 }

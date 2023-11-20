@@ -1,4 +1,5 @@
-package com.masai.exceptions;
+package com.masai.exception;
+
 
 import java.time.LocalDateTime;
 
@@ -87,8 +88,8 @@ public class GlobalExceptionHandler {
 		
 	}
 	
-	@ExceptionHandler(LoginException.class)
-	public ResponseEntity<MyErrors>handleLoginException(LoginException le,WebRequest weq){
+	@ExceptionHandler(LoginSessionException.class)
+	public ResponseEntity<MyErrors>handleLoginException(LoginSessionException le,WebRequest weq){
        
 		MyErrors err=new MyErrors();
 		err.setMsg(le.getMessage());

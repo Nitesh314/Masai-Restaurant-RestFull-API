@@ -1,16 +1,19 @@
 package com.masai.models;
 
-import jakarta.persistence.CascadeType;
-import jakarta.persistence.Entity;
-import jakarta.persistence.FetchType;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.OneToOne;
-import jakarta.validation.constraints.Pattern;
+import javax.persistence.Embedded;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
 
 @Entity
 @Data
@@ -19,28 +22,26 @@ import lombok.NoArgsConstructor;
 public class Customer {
 	
 	@Id
-	@GeneratedValue(strategy =GenerationType.AUTO )
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer customerId;
-	@Pattern(regexp ="^[A-Za-z ]{2,15}$",message = "name contain only alphabetical characters and the length should be between 1 to 16 characters")
+	
+	@Size(min =2, max =15, message = "Name must be between 2 and 15 characters")
 	private String firstName;
-	@Pattern(regexp ="^[A-Za-z ]{2,15}$",message = "name contain only alphabetical characters and the length should be between 1 to 16 characters")
+	@Size(min =2, max =15, message = "Name must be between 2 and 15 characters")
 	private String lastName;
-	@Pattern(regexp = "^(1[5-9]|[2-9][0-9]|100)$",message = "age should be allow only greater than equal to 15 and less than equal to 100")
+    @Min(value = 15, message = "Age must be 15 or older")
+	@Max(value =  100, message = "Age must be 100 or younger")
 	private Integer age;
-	@Pattern(regexp = "^(male|female|transgender)$",message = "gender should be allowed only male,female or transgender...")
+    @Pattern(regexp = "^(male|female|transgender)$", message = "Invalid gender. Accepted values are male, female, or transgender.")
 	private String gender;
-	@Pattern(regexp = "^\\+91[789]\\d{9}$",message = "mobile number should be start +91 code and first number should be eather 7,8 or 9 and it should be only 10 digit...")
+    @Pattern(regexp = "^\\d{10}$", message = "Invalid mobile number pattern")
 	private String mobileNumber;
-	@Pattern(regexp = "^[A-Za-z0-9]+@[A-Za-z0-9.-]+$",message = "email should be follows this pattern abc124@gmail.com...")
+    @Pattern(regexp = "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$", message = "Invalid email address")
 	private String email;
-	@Pattern(regexp = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@#$%^&+=]).{8,15}$",message = "Password length is between 7 to 16 characters and it is follow the (Java@314) pattern here the specific symbole @#$%^&+=))")
+    @Pattern(regexp = "^(?=.*[A-Za-z])(?=.*\\d)(?=.*[@$!%*#?&])[A-Za-z\\d@$!%*#?&]{8,}$", message = "Invalid password! Password must be at least 8 characters long and include a mix of letters, numbers, and special characters")
 	private String password;
 	
-	@OneToOne(targetEntity = Address.class ,cascade = CascadeType.ALL)
+	@Embedded
 	private Address address;
-	
-	
-	
-	
 
 }
