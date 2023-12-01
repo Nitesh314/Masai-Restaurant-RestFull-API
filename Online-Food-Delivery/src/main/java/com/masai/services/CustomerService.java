@@ -9,9 +9,9 @@ public interface CustomerService {
 	
 	public Customer updateProfileDetails(String userName,Customer updatedCustomerDetails)throws CustomerException;
 	
-	public String deleteAccount(Integer customerId,String userName)throws CustomerException;
+	public String deleteAccount(String userName)throws CustomerException;
 	
-	public Customer getAccountDetails(Integer customerId,String userName)throws CustomerException;
+	public Customer getAccountDetails(String userName)throws CustomerException;
 	
 	
 	

@@ -13,6 +13,8 @@ import com.masai.models.Restaurant;
 public interface RestaurantRepository extends JpaRepository<Restaurant,Integer> {
 	
 	public Restaurant findByMobileNumber(String contactNumber);
+	
+	public  Restaurant findByRestaurantName(String restaurantName);
 		
 	@Query("select r.itemList from Restaurant r where r.restaurantId=?1")
     public List<Item> getAllItemsfromRestorant(Integer restaurantId);

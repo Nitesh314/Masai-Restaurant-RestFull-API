@@ -35,7 +35,7 @@ public class CustomerControllerHandler {
 	
 //************************************************************************************************************
 	
-	@PutMapping("/update/{userName}")
+	@PutMapping("/updateCustomer/{userName}")
 	public ResponseEntity<Customer> updateProfile(@PathVariable("userName") String userName,  @RequestBody Customer updatedCustomer) throws CustomerException{
 		
 		Customer updatedCustomerEntity= customerService.updateProfileDetails(userName, updatedCustomer);
@@ -47,10 +47,10 @@ public class CustomerControllerHandler {
 
 //************************************************************************************************************
 	
-	@DeleteMapping("/delete/{customerId}/{userName}")
-	public ResponseEntity<String> deleteAccount(@PathVariable("customerId") Integer customerId,@PathVariable("userName") String userName) throws CustomerException{
+	@DeleteMapping("/deleteCustomer/{userName}")
+	public ResponseEntity<String> deleteAccount(@PathVariable("userName") String userName) throws CustomerException{
             
-		 String deleteStatus= customerService.deleteAccount(customerId, userName);
+		 String deleteStatus= customerService.deleteAccount(userName);
 		 
 		return new ResponseEntity<String>(deleteStatus,HttpStatus.MOVED_PERMANENTLY);			
 	
@@ -58,10 +58,10 @@ public class CustomerControllerHandler {
 	
 	
 //**************************************************************************************************************
-	@GetMapping("/getAccount/{customerId}/{userName}")
-	public ResponseEntity<Customer> getAccountDetails(@PathVariable("customerId") Integer customerId,@PathVariable("userName") String userName) throws CustomerException{
+	@GetMapping("/getAccountDetails/{userName}")
+	public ResponseEntity<Customer> getAccountDetails(@PathVariable("userName") String userName) throws CustomerException{
 		
-		Customer accountDetails= customerService.getAccountDetails(customerId, userName);
+		Customer accountDetails= customerService.getAccountDetails(userName);
 		
 		return new ResponseEntity<Customer>(accountDetails,HttpStatus.OK);
 		

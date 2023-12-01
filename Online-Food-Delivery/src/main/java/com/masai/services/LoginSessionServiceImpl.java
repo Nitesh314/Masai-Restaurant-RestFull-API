@@ -1,10 +1,7 @@
 package com.masai.services;
 
-import java.lang.module.ResolutionException;
+import java.time.LocalDateTime;
 import java.util.Optional;
-
-import javax.security.auth.login.LoginException;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.masai.exception.LoginSessionException;
@@ -51,7 +48,7 @@ public class LoginSessionServiceImpl implements LoginSessionService {
 			}else {
 				
 				if (existingCustomer.getPassword() != null && existingCustomer.getPassword().equals(lDto.getPassword())) {
-                    LoginSession customerSession = new LoginSession(existingCustomer.getCustomerId(),existingCustomer.getFirstName(),existingCustomer.getMobileNumber(),existingCustomer.getPassword());
+                    LoginSession customerSession = new LoginSession(existingCustomer.getCustomerId(),existingCustomer.getFirstName()+RandomString.make(1),LocalDateTime.now());
 
                     loginRepo.save(customerSession);
 
@@ -101,7 +98,7 @@ public class LoginSessionServiceImpl implements LoginSessionService {
 				 throw new LoginSessionException("Restaurant already exist...");
 			 }else {
 				 if (existingRestaurant.getPassword() != null && existingRestaurant.getPassword().equals(lDto.getPassword())) {
-	                    LoginSession RestaurentSession = new LoginSession(existingRestaurant.getRestaurantId(),RandomString.make(4),existingRestaurant.getMobileNumber(),existingRestaurant.getPassword());
+	                    LoginSession RestaurentSession = new LoginSession(existingRestaurant.getRestaurantId(),RandomString.make(4),LocalDateTime.now());
 
 	                    loginRepo.save(RestaurentSession);
 

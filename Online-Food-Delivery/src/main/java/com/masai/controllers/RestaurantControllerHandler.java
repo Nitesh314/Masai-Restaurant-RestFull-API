@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.masai.exception.ItemException;
+import com.masai.exception.LoginSessionException;
 import com.masai.exception.RestaurantException;
 import com.masai.models.Item;
 import com.masai.models.Restaurant;
@@ -43,13 +44,14 @@ public class RestaurantControllerHandler {
 		
 		String registerResult= restaurantService.registerRestaurant(restaurant);
 		
-		return new ResponseEntity<String>(registerResult,HttpStatus.OK);
+		return new ResponseEntity<String>(registerResult,HttpStatus.CREATED);
+		
 		
 	}
 //*****************************************************************************************************************
 	
 	@PutMapping("/update/{userName}")
-	public ResponseEntity<Restaurant>updateRestaurant(@PathVariable("userName") String userName,@RequestBody Restaurant updatedRestaurant) throws RestaurantException{
+	public ResponseEntity<Restaurant>updateRestaurant(@PathVariable("userName") String userName,@RequestBody Restaurant updatedRestaurant) throws RestaurantException, LoginSessionException{
 		
 		Restaurant updatedRestaurantDetails= restaurantService.updateRestaurantDetails(userName, updatedRestaurant);
 		
@@ -58,29 +60,29 @@ public class RestaurantControllerHandler {
 
 //******************************************************************************************************************
 	
-	@DeleteMapping("delete/{userName}/{restaurantId}")
-	public ResponseEntity<String>removeAccount(@PathVariable("userName") String usrName,@PathVariable("restaurantId") Integer restaurantId) throws RestaurantException{
+	@DeleteMapping("delete/{userName}")
+	public ResponseEntity<String>removeAccount(@PathVariable("userName") String usrName) throws RestaurantException, LoginSessionException{
 		
-		String removeResult= restaurantService.removeRestaurantAccount(usrName, restaurantId);
+		String removeResult= restaurantService.removeRestaurantAccount(usrName);
 		
 		return new ResponseEntity<String>(removeResult,HttpStatus.MOVED_PERMANENTLY);
 	}
 	
 //*******************************************************************************************************************
-	@GetMapping("/get/{restaurnatsId}")
-	public ResponseEntity<Restaurant>getRstaurantDetails(@PathVariable("restaurantId") Integer restaurantId) throws RestaurantException{
+	@GetMapping("/getRestaurant/{userName}")
+	public ResponseEntity<Restaurant>getRstaurantDetails(@PathVariable("userName") String userName) throws RestaurantException, LoginSessionException{
 		
-		Restaurant restaurantDetails= restaurantService.getRestaurantDetails(restaurantId);
+		Restaurant restaurantDetails= restaurantService.getRestaurantDetails(userName);
 		
 		return new ResponseEntity<Restaurant>(restaurantDetails,HttpStatus.OK);
 		
 	}
 //*********************************************************************************************************************
 	
-	@GetMapping("/getAllItems/{restaurantId}")
-	public ResponseEntity<List<Item>>getAllItems(Integer restaurantId) throws RestaurantException, ItemException{
+	@GetMapping("/getAllItems/{userName}")
+	public ResponseEntity<List<Item>>getAllItems(@PathVariable("userName") String userName) throws RestaurantException, ItemException, LoginSessionException{
 		
-	 	List<Item>itemList= restaurantService.getAllItemDetails(restaurantId);
+	 	List<Item>itemList= restaurantService.getAllItemDetails(userName);
 	 	
 	 	return new ResponseEntity<List<Item>>(itemList,HttpStatus.OK);
 		

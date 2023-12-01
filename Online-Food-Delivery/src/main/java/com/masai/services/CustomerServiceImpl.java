@@ -54,14 +54,15 @@ public class CustomerServiceImpl implements CustomerService {
 //************************************************************************************************************	
 	
 	@Override
-	public String deleteAccount(Integer customerId, String userName) throws CustomerException {
+	public String deleteAccount( String userName) throws CustomerException {
         
 		LoginSession existingUser= loginSessionRepo.findByUserName(userName);
 		
 		if(existingUser==null) {
 			throw new CustomerException("Invalid user name or Customer not exist the account...");
 		}else {
-			   customerRepo.deleteById(customerId);
+			   customerRepo.deleteById(existingUser.getLoginId());
+			   loginSessionRepo.deleteById(existingUser.getLoginId());
 			   
 			   return "account deleted successfully...";
 	
@@ -72,14 +73,14 @@ public class CustomerServiceImpl implements CustomerService {
 //************************************************************************************************************
 
 	@Override
-	public Customer getAccountDetails(Integer customerId, String userName) throws CustomerException {
+	public Customer getAccountDetails( String userName) throws CustomerException {
 		
         LoginSession existingUser= loginSessionRepo.findByUserName(userName);
 		
 		if(existingUser==null) {
 			throw new CustomerException("Invalid user name or Customer not exist the account...");
 		}else {
-			   Customer profileDetails= customerRepo.getById(customerId);
+			   Customer profileDetails= customerRepo.findById(existingUser.getLoginId()).orElseThrow(()->new CustomerException("Invalid custoemrId..."));
 			   
 			   return profileDetails;
 	
