@@ -10,6 +10,9 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
@@ -27,9 +30,21 @@ public class Item {
 	@Id
 	//@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer itemId;
+	@NotBlank
+	@NotEmpty
+	@NotNull
 	private String itemName;
+	@NotBlank
+	@NotEmpty
+	@NotNull
 	private String category;
+	@NotBlank
+	@NotEmpty
+	@NotNull
 	private Integer quantity;
+	@NotBlank
+	@NotEmpty
+	@NotNull
 	private Double cost;
 	
 	@JsonIgnore

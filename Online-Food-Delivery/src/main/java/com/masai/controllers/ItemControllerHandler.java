@@ -2,6 +2,8 @@ package com.masai.controllers;
 
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.apache.catalina.connector.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -21,6 +23,8 @@ import com.masai.exception.LoginSessionException;
 import com.masai.exception.RestaurantException;
 import com.masai.models.Item;
 import com.masai.services.ItemService;
+
+import lombok.val;
 
 @RestController
 @RequestMapping("/Items")
@@ -44,7 +48,7 @@ public class ItemControllerHandler {
 //	 public List<Item>getAllItemByCategory(String categoryName)throws ItemException,CategoryException;
 	
 	@PostMapping("/createItem/{userName}")
-	public ResponseEntity<String>createItem(@PathVariable ("userName")String userName ,@RequestBody Item item) throws ItemException, RestaurantException, LoginSessionException{
+	public ResponseEntity<String>createItem(@PathVariable ("userName")String userName ,@Valid @RequestBody Item item) throws ItemException, RestaurantException, LoginSessionException{
 		
 		String itemResult= itemService.addItem(userName,item);
 		

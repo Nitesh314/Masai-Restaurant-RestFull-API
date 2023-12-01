@@ -2,6 +2,8 @@ package com.masai.controllers;
 
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -40,7 +42,7 @@ public class RestaurantControllerHandler {
 	
 	
 	@PostMapping("/register")
-	public ResponseEntity<String> registerRestaurant(@RequestBody Restaurant restaurant) throws RestaurantException{
+	public ResponseEntity<String> registerRestaurant(@Valid @RequestBody Restaurant restaurant) throws RestaurantException{
 		
 		String registerResult= restaurantService.registerRestaurant(restaurant);
 		
