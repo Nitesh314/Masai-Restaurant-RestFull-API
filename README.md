@@ -1,18 +1,8 @@
 # Hoodie Foodie (Online Food Delivery System)
-<img src="https://github.com/sgrprmnk/befitting-advice-51/blob/main/ProjectLogo.PNG">
+<img src="[https://github.com/sgrprmnk/befitting-advice-51/blob/main/ProjectLogo.PNG](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR1vEkKUF4IxJ8hPjOYO-Ageddz-DoziDcwJ4jnIsiu5kbdV7UToFROCDkpzP_I6ZPgDSU&usqp=CAU)">
 ## Online Food Delivery App strictly followed MVC architecture
 
- - We have developed this REST API for an Ecommarce Rest API. This API performs all the fundamental CRUD operations of any ecommarce Application platform with user validation at every step.
- 
- ## Team Members
- 
- <a href="https://github.com/sgrprmnk">Sagar Pramanik</a>
- <br>
- <a href="https://github.com/Sandeepyadav14">Sandeep Yadav</a>
- <br>
- <a href="https://github.com/Swapnil28Y">Swapanil Yeutkar</a>
- <br>
- <a href="https://github.com/Akash-298">Akash Chikhalonde</a>
+ - I developed this REST API for an Ecommarce Rest API. This API performs all the fundamental CRUD operations of any e-commerce Application platform with user validation at every step.
 
 ## Module
 <img src="https://github.com/sgrprmnk/befitting-advice-51/blob/main/model.png">
@@ -21,7 +11,8 @@
 
 ## Entity Relationship Diagram
 
-<img src="https://github.com/sgrprmnk/befitting-advice-51/blob/main/Picture1.png">
+<img src="![image](https://github.com/Nitesh314/Masai-Restaurant-RestFull-API/assets/105979193/4af20e1d-9fb1-4294-90b7-52119617cc36)
+">
 
 
 ## Functionality (Swagger UI) 
@@ -33,7 +24,7 @@
 -   Find items by category
 -   Add to cart/edit into the cart
 -   Place Order
--   Get orderdetails
+-   Get order details
 -   Get Bills
 <img src="https://github.com/sgrprmnk/befitting-advice-51/blob/main/functionalityAtGlance.png">
 
