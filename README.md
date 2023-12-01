@@ -1,41 +1,92 @@
-# The Fodie Express - Online Food Delivery App
+# Hoodie Foodie (Online Food Delivery System)
+<img src="https://github.com/sgrprmnk/befitting-advice-51/blob/main/ProjectLogo.PNG">
+## Online Food Delivery App strictly followed MVC architecture
 
-The Fodie Express is an online food delivery app designed to form a bridge between customers and restaurants. It addresses the challenge of delivering food to the customer's doorstep, featuring a fully functional application built with the MVC design pattern in Spring Boot. The project includes proper exception handling, input validation, user authentication, and more.
+ - We have developed this REST API for an Ecommarce Rest API. This API performs all the fundamental CRUD operations of any ecommarce Application platform with user validation at every step.
+ 
+ ## Team Members
+ 
+ <a href="https://github.com/sgrprmnk">Sagar Pramanik</a>
+ <br>
+ <a href="https://github.com/Sandeepyadav14">Sandeep Yadav</a>
+ <br>
+ <a href="https://github.com/Swapnil28Y">Swapanil Yeutkar</a>
+ <br>
+ <a href="https://github.com/Akash-298">Akash Chikhalonde</a>
 
-## Features
+## Module
+<img src="https://github.com/sgrprmnk/befitting-advice-51/blob/main/model.png">
 
-- User Registration, Login, and Logout
-- View all available items
-- View restaurants
-- Find items by category
-- Add to cart and edit cart
-- Place orders
-- Get order details
-- Get bills
 
-## Technologies Used
 
-- Java Core
-- Spring Boot
-- Spring Data JPA
-- JPQL
-- MySQL
-- Hibernate
-- Swagger
-- Lombok
+## Entity Relationship Diagram
 
-## Getting Started
+<img src="https://github.com/sgrprmnk/befitting-advice-51/blob/main/Picture1.png">
 
-1. Clone this repository.
-2. Update the database configuration in `application.properties`.
-   - Update port number, username, and password as per your local database config.
 
-```properties
-server.port=8888
-spring.datasource.url=jdbc:mysql://localhost:3306/emcommarcedb
-spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
-spring.datasource.username=YourUserName
-spring.datasource.password=YourPassword
-spring.jpa.hibernate.ddl-auto=update
-spring.jpa.show-sql=true
-spring.mvc.pathmatch.matching-strategy=ANT_PATH_MATCHER
+## Functionality (Swagger UI) 
+<a href="https://github.com/sgrprmnk/befitting-advice-51/blob/main/functionalityDocumentation_swagger.pdf">Click Here for functionality details</a>
+## Functionality at a glance
+-   User can register/login-logout
+-   can view all items
+-   can view restaurants
+-   Find items by category
+-   Add to cart/edit into the cart
+-   Place Order
+-   Get orderdetails
+-   Get Bills
+<img src="https://github.com/sgrprmnk/befitting-advice-51/blob/main/functionalityAtGlance.png">
+
+## REST API
+<a href="https://github.com/sgrprmnk/befitting-advice-51/blob/main/api-docs.pdf">Click Here for api details</a>
+
+## Backend Work
+-  Proper Exception Handling
+-  Proper Input Validation
+-  Data Stored in the database(mySQL)
+-  User Authentication of signUp, Login and Logout
+
+## Installation and Run
+-  You can clone this repo and start the serve on localhost
+-   Before running the API server, we should update the database config inside the application.properties file.
+-   Update the port number, username and password as per our local database config.
+    -   server.port=8888
+    -   spring.datasource.url=jdbc:mysql://localhost:3306/emcommarcedb
+    -   spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+    -   spring.datasource.username=**Your UserName**
+    -   spring.datasource.password=**YourPassword**
+    -   spring.jpa.hibernate.ddl-auto=update
+    -   spring.jpa.show-sql=true
+    -   spring.mvc.pathmatch.matching-strategy = ANT_PATH_MATCHER
+    
+-to check the swagger http://localhost:8888/swagger-ui/
+
+### App is live on AWS find the link below:
+#### http://hoodiefoodie-env.eba-8rymyyiz.ap-south-1.elasticbeanstalk.com/
+
+### It is also live on swagger find the link below:
+#### http://hoodiefoodie-env.eba-8rymyyiz.ap-south-1.elasticbeanstalk.com/swagger-ui/
+
+## Tech Stacks
+<p>
+   <img src="https://img.icons8.com/color/64/000000/java.png"/>
+   <img src="https://img.icons8.com/color/48/null/spring-logo.png"/>
+   <img src="https://github.com/efat56/striped-pear-8171/blob/main/Images/hibernate_logo_icon_171004.png" />
+   <img src="https://img.icons8.com/ios/50/null/mysql-logo.png"/>
+</p>
+
+-   Java Core
+-   Spring Boot
+-   Spring Data JPA
+-   JPQL
+-   MySQL
+-   Hibernate
+-   Swagger
+-   Lombok
+
+## Unique Features
+- Used Id as a String and unique in every cases
+- Can be Multilanguage(Regional Language)
+
+
+
