@@ -5,7 +5,7 @@
  - I developed this REST API for an E-commerce REST API. This API performs all the fundamental CRUD operations of any e-commerce application platform with user validation at every step.
 
 ## Module
-<img src="https://github.com/sgrprmnk/befitting-advice-51/blob/main/model.png">
+<img src="https://img.seromitschu.repl.co/kH5L1.png">
 
 
 
