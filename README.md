@@ -25,10 +25,6 @@
 -   Place Order
 -   Get order details
 -   Get Bills
-<img src="https://github.com/sgrprmnk/befitting-advice-51/blob/main/functionalityAtGlance.png">
-
-## REST API
-<a href="https://github.com/sgrprmnk/befitting-advice-51/blob/main/api-docs.pdf">Click Here for api details</a>
 
 ## Backend Work
 -  Proper Exception Handling
@@ -40,7 +36,7 @@
 -  You can clone this repo and start the serve on localhost
 -   Before running the API server, we should update the database config inside the application.properties file.
 -   Update the port number, username and password as per our local database config.
-    -   server.port=8888
+    -   server.port=8585
     -   spring.datasource.url=jdbc:mysql://localhost:3306/emcommarcedb
     -   spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
     -   spring.datasource.username=**Your UserName**
@@ -49,14 +45,7 @@
     -   spring.jpa.show-sql=true
     -   spring.mvc.pathmatch.matching-strategy = ANT_PATH_MATCHER
     
--to check the swagger http://localhost:8888/swagger-ui/
-
-### App is live on AWS find the link below:
-#### http://hoodiefoodie-env.eba-8rymyyiz.ap-south-1.elasticbeanstalk.com/
-
-### It is also live on swagger find the link below:
-#### http://hoodiefoodie-env.eba-8rymyyiz.ap-south-1.elasticbeanstalk.com/swagger-ui/
-
+-to check the swagger http://localhost:8585/swagger-ui/
 ## Tech Stacks
 <p>
    <img src="https://img.icons8.com/color/64/000000/java.png"/>
@@ -75,8 +64,9 @@
 -   Lombok
 
 ## Unique Features
-- Used Id as a String and unique in every cases
-- Can be Multilanguage(Regional Language)
+- In this application, whenever the user and restaurant perform any action, always they have to use a username. So, first, login or sign up to get the username 
+  and then proceed with the task.
+
 
 
 
