@@ -11,7 +11,7 @@
 
 ## Entity Relationship Diagram
 
-<img src="https://i.im.ge/2023/12/01/CYkq71.The-Fodie-Express-ER-Diagram.png">
+<img src="https://img.seromitschu.repl.co/AnpYz.png">
 
 
 ## Functionality (Swagger UI) 
