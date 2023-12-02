@@ -61,7 +61,8 @@ All modules of our project
 ## Bill Module
 <img src="https://img.seromitschu.repl.co/CU9bh.png"/>
 
-## Installation and Run
+## How To Run Our Project In Your Machine
+
 -  You can clone this repo and start the serve on localhost
 -   Before running the API server, we should update the database config inside the application.properties file.
 -   Update the port number, username, and password as per our local database config.
