@@ -4,18 +4,6 @@
 
  - I developed this REST API for an E-commerce REST API. This API performs all the fundamental CRUD operations of any e-commerce application platform with user validation at every step.
 
-## Module
-<img src="https://img.seromitschu.repl.co/kH5L1.png">
-
-
-
-## Entity Relationship Diagram
-
-<img src="https://img.seromitschu.repl.co/AnpYz.png">
-
-
-## Functionality (Swagger UI) 
-<a href="https://github.com/sgrprmnk/befitting-advice-51/blob/main/functionalityDocumentation_swagger.pdf">Click Here for functionality details</a>
 ## Functionality at a glance
 -   User can register/login-logout
 -   can view all items
@@ -26,16 +14,39 @@
 -   Get order details
 -   Get Bills
 
+## Technology used  
+- Java
+- MySQL
+- Spring Boot
+- Spring data JPA
+- RESTful api
+- Hibernate
+- Swagger
+- Lombok
+- Maven
+- Postman
+- Spring tool suite eclipse
+- Git & GitHub
+## Lessons Learned
+- Gain excessive knowledge on application of Java, MySQL and SpringBoot.
+- Gain knowledge on creating RESTful API.
+- Enjoyed the process of learning and creating the application.
+
 ## Backend Work
 -  Proper Exception Handling
 -  Proper Input Validation
--  Data Stored in the database(mySQL)
--  User Authentication of signUp, Login and Logout
+-  Data Stored in the database(MySQL)
+-  User Authentication of signup, Login, and Logout
+
+## Overview of Our work
+## Er Diagram
+<img src="https://img.seromitschu.repl.co/o7noQ.png" />
+
 
 ## Installation and Run
 -  You can clone this repo and start the serve on localhost
 -   Before running the API server, we should update the database config inside the application.properties file.
--   Update the port number, username and password as per our local database config.
+-   Update the port number, username, and password as per our local database config.
     -   server.port=8585
     -   spring.datasource.url=jdbc:mysql://localhost:3306/emcommarcedb
     -   spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
@@ -46,22 +57,8 @@
     -   spring.mvc.pathmatch.matching-strategy = ANT_PATH_MATCHER
     
 -to check the swagger http://localhost:8585/swagger-ui/
-## Tech Stacks
-<p>
-   <img src="https://img.icons8.com/color/64/000000/java.png"/>
-   <img src="https://img.icons8.com/color/48/null/spring-logo.png"/>
-   <img src="https://github.com/efat56/striped-pear-8171/blob/main/Images/hibernate_logo_icon_171004.png" />
-   <img src="https://img.icons8.com/ios/50/null/mysql-logo.png"/>
-</p>
 
--   Java Core
--   Spring Boot
--   Spring Data JPA
--   JPQL
--   MySQL
--   Hibernate
--   Swagger
--   Lombok
+
 
 ## Unique Features
 - In this application, whenever the user and restaurant perform any action, always they have to use a username. So, first, login or sign up to get the username 
