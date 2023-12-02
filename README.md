@@ -41,7 +41,25 @@
 ## Overview of Our work
 ## Er Diagram
 <img src="https://img.seromitschu.repl.co/o7noQ.png" />
-
+## All Modules
+All modules of our project
+<img src="https://img.seromitschu.repl.co/qiQyq.png"/>
+## Restaurant Module
+<img src="https://img.seromitschu.repl.co/ca7fg.png"/>
+## Customer Module
+<img src="https://img.seromitschu.repl.co/5VJNm.png"/>
+## Restaurant-Login Module
+<img src="https://img.seromitschu.repl.co/mU2sK.png"/>
+## Customer-Login Module
+<img src="https://img.seromitschu.repl.co/SYsVy.png"/>
+## Item Module
+<img src="https://img.seromitschu.repl.co/JBVdo.png"/>
+## FoodCart Module
+<img src="https://img.seromitschu.repl.co/qdBco.png"/>
+## OrderDetails Module
+<img src="https://img.seromitschu.repl.co/bTwAP.png"/>
+## Bill Module
+<img src="https://img.seromitschu.repl.co/CU9bh.png"/>
 
 ## Installation and Run
 -  You can clone this repo and start the serve on localhost
