@@ -38,9 +38,7 @@ public class Customer {
 	@NotNull
 	@Size(min =2, max =15, message = "Name must be between 2 and 15 characters")
 	private String lastName;
-	@NotBlank
-	@NotEmpty
-	@NotNull
+	
     @Min(value = 15, message = "Age must be 15 or older")
 	@Max(value =  100, message = "Age must be 100 or younger")
 	private Integer age;
